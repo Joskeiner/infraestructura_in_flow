@@ -1,0 +1,21 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "infraestructura de back-end para proyecto integrador",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aws",
+    "s3"
+  ],
+  "author": "joskeiner simosa",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.637.0",
+    "@aws-sdk/client-lambda": "^3.637.0",
+    "@aws-sdk/client-s3": "^3.637.0"
+  }
+}

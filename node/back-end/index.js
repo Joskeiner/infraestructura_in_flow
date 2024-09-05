@@ -40,10 +40,14 @@ async function main() {
 
  await main();
 
-// TODO node : la db de dynamo falta crear eliminar
+//*  node : la db de dynamo listo
 // !node: lambda 
-//!  node ec2   
-//!  nodecognito
 //  *  node s3 listo
-// ? golang :  aurora ,rds , cloudfront -> por definir
-// ? python : APIGetway  y todos los otros servicios -> por definir
+// ? golang :  aurora ,rds -> por definir
+// ? python : APIGetway   -> por definir
+
+// ? documentacion 
+// https://patorjk.com/software/taag/#p=display&f=3-D&t=In%20Flow
+// https://nodejs.org/en/learn/command-line/accept-input-from-the-command-line-in-nodejs
+// https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/getting-started-nodejs.html
+// https://github.com/awsdocs/aws-doc-sdk-examples/blob/main/javascriptv3/example_code/nodegetstarted/index.js

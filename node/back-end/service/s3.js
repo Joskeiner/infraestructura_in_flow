@@ -6,7 +6,9 @@ import {
     DeleteBucketCommand,
     paginateListObjectsV2,
     DeleteObjectCommand,
+    PutObjectCommand
 } from "@aws-sdk/client-s3"
+
 
 // verificar si se puede configurar de forma mas detallada los buckets
 /**

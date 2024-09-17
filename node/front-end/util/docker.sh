@@ -21,6 +21,6 @@ docker-buildx-plugin docker-compose-plugin
 
 sudo docker pull joskeiner/app:0.1
 
-sudo docker run --name inflow -p 8080:80 joskeiner/app:0.1 
+sudo docker run --name inflow -p 80:80 joskeiner/app:0.1 
 
 

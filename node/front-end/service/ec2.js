@@ -27,7 +27,7 @@ export async function createEc2(){
         InstanceType: process.env.TYPEINSTANCE,
         ImageId:process.env.TYPEAMI,
         UserData: Buffer.from(shellScript).toString('base64'),
-        MaxCount:1,
+        MaxCount:2,
         MinCount: 1,
 
     });
@@ -70,7 +70,7 @@ async function createSegurityGroup(){
                     IpProtocol:'tcp',
                     FromPort: 22,
                     ToPort:22,
-                    IpRanges:[{CidrIp:'200.105.49.162/32'}], // poner su ip a su defecto
+                    IpRanges:[{CidrIp: process.env.IP}], // poner su ip a su defecto
 
                 },
                 {

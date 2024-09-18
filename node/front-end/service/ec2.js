@@ -17,21 +17,22 @@ const shellScript =  readFileSync( process.env.URL, 'utf-8')
  * @returns {number}
  */
 export async function createEc2(){
-    const key = await getKey();
-    const segurity = await createSegurityGroup();
-    console.log(segurity)
-
-    const command = new RunInstancesCommand({
-        KeyName: key,
-        SecurityGroupIds:[segurity],
-        InstanceType: process.env.TYPEINSTANCE,
-        ImageId:process.env.TYPEAMI,
-        UserData: Buffer.from(shellScript).toString('base64'),
-        MaxCount:2,
-        MinCount: 1,
-
-    });
     try{
+        
+            const key = await getKey();
+            const segurity = await createSegurityGroup();
+            console.log(segurity)
+        
+            const command = new RunInstancesCommand({
+                KeyName: key,
+                SecurityGroupIds:[segurity],
+                InstanceType: process.env.TYPEINSTANCE,
+                ImageId:process.env.TYPEAMI,
+                UserData: Buffer.from(shellScript).toString('base64'),
+                MaxCount:1,
+                MinCount: 1,
+        
+            });
         /**
          * @constant {RunInstancesCommandOutput} response
          */

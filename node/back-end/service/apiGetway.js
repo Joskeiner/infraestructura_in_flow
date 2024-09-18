@@ -3,7 +3,7 @@ import { createInterface} from 'node:readline/promises';
 const client = new ApiGatewayV2Client({});
 // se necesita arn de las lambas
 export async function CreateApi(arns) {
-
+    console.log(arns)
     try{
             const prompt =  createInterface({
                 input : process.stdin,
@@ -21,7 +21,7 @@ export async function CreateApi(arns) {
             Description :description,
             ProtocolType: process.env.TYPEPROTOCOL,
             RouteKey: process.env.ROUTEKEY,
-            Target: arns[0], 
+            Target: arns, 
         });
 
         const response = await client.send(commnad);

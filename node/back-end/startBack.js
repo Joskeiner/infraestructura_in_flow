@@ -18,22 +18,14 @@ export async function startBack() {
          output:process.stdout,
       });
       
-      const choice = await prompt.question(`\t ##### Elija el nombre del bucket \n#####`);
-      
+      const choice = await prompt.question(`##### Elija el nombre del bucket #####\n`);
+      prompt.close();
+   
       await createBucket(choice);
       
-      if (response == 200 ){
-         console.log(`Se levanto con exito`);
-      }else {
-         console.log(`respuesta de la api es ${response}`)
-      }
       
-      const number = await prompt.question(`\t ##### Cuantas lamndas desea crear ?\n#####`);
-      
-      number = parseInt(number);
-      
-      let arn = await startLambda(number);
-      await CreateApi(arn);
+      let response = await createLambda();
+      await CreateApi(response);
       
    } 
    catch (error) {
@@ -41,24 +33,4 @@ export async function startBack() {
       
    }
 }
-/**
- * 
- * @param {number} numbers 
- * @returns {number[]}
- */
-async function startLambda(numbers){
-   try{
 
-      const arns = [];
-        for (let index = 0; index < numbers; index++) {
-      
-          let response = await createLambda();
-          arns.push(response);
-     }
-   
-     return arns;
-   }catch(err){
-      console.log(`ERROR START LAMBDA:${err.message}`);
-   }
-
-}

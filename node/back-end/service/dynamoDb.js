@@ -50,7 +50,7 @@ export async function createTableDynamo(){
 
         if (response.$metadata.httpStatusCode == 200){
 
-        console.log(` La table se creo con exito con el  id :${response.TableDescription.TableId}`);
+        console.log(` \nLa table se creo con exito con el  id :${response.TableDescription.TableId}`);
         }else {
             
         console.log(`hubo un error al momento de crear la tabla , codigo de la peticion http ${response.$metadata.httpStatusCode}`);

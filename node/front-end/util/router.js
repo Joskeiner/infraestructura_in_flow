@@ -1,12 +1,14 @@
 import { createBucket  , DeleteBucket} from "../../back-end/service/s3.js";
 import { createInterface} from 'node:readline/promises';
 import {createTableDynamo , deleteTableDynamo} from "../../back-end/service/dynamoDb.js";
+import { createLambda, UpdateCode } from "../../back-end/service/lambda.js";
 // import {  } from "./service/lambda.js";
 /**
  * esta funcion  manejara las rutas para cada servicio
  * @param {number} choiceNumber 
  */
 export async function Router( choiceNumber) {
+    let choiceNumber = await present();
   switch(choiceNumber) {
         case  1 :
                   const promptBucket = createInterface({
@@ -33,17 +35,34 @@ export async function Router( choiceNumber) {
             await deleteTableDynamo();
             process.exit(0);
         case 5:
-            // eliminar lamnda
+            await createLambda();
             process.exit(0);
         case 6:
-            // eliminar lambda
-        case 7:
-            // configurar lamda
-        case 8:
-            // crear ec2
+            await UpdateCode();
+            process.exit(0);
         default:
             break;
     }
   
 
+}
+
+async function present() {
+        const prompt = createInterface({
+        input: process.stdin,
+        output:process.stdout,
+    });    
+    const choice = await prompt.question(`\t ##### Elija una de las opciones ##### 
+
+        1 - crear bucket
+        2 - eliminar bucket
+        3 - crear tabla
+        4 - eliminar tabla 
+        5 - crear lambda
+        6 - subir el codigo  
+        \n
+        `);
+
+    let choiceNumber = parseInt(choice);
+    return  choiceNumber ;
 }

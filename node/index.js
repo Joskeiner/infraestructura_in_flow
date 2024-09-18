@@ -25,6 +25,7 @@ async function main() {
     const choice = await prompt.question(`\t ##### Elija una de las opciones ##### 
         1 - Levantar el Front-end 
         2 - Levantar el Back-end
+        3 - crear servicios
         \n
         `);
         prompt.close();
@@ -41,11 +42,11 @@ async function upService(choice){
         switch(choice){
         case 1 :
             await startFront();
-            await main();
+            process.exit(0);
         case 2 :
             await startBack(); 
-            await main();
-        default:
+            process.exit(0);
+        case 3 :
             process.exit(0);           
         }
 

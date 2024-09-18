@@ -48,7 +48,7 @@ export async function createEc2(){
 }
 
 /**
- * 
+ * create a security group for ec2 
  * @returns {string}
  */
 async function createSegurityGroup(){

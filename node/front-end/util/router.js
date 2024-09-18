@@ -1,6 +1,6 @@
-import { createBucket  , DeleteBucket} from "./service/s3.js";
+import { createBucket  , DeleteBucket} from "../../back-end/service/s3.js";
 import { createInterface} from 'node:readline/promises';
-import {createTableDynamo , deleteTableDynamo} from "./service/dynamoDb.js";
+import {createTableDynamo , deleteTableDynamo} from "../../back-end/service/dynamoDb.js";
 // import {  } from "./service/lambda.js";
 /**
  * esta funcion  manejara las rutas para cada servicio

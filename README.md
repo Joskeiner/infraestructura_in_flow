@@ -1,5 +1,6 @@
 
-# Infraestructura en AWS Esta es una documentación que explica, a grandes rasgos, cómo utilizar el CLI para crear servicios de AWS con el SDK de JavaScript de AWS.
+# Infraestructura en AWS
+Esta es una documentación que explica, a grandes rasgos, cómo utilizar el CLI para crear servicios de AWS con el SDK de JavaScript de AWS.
 Los servicios que se crean son:
 
 - Para el Front-end, una instancia de EC2 que contiene un Docker ejecutando una imagen de Inflow.

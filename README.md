@@ -4,7 +4,7 @@ Los servicios que se crean son:
 
 - Para el Front-end, una instancia de EC2 que contiene un Docker ejecutando una imagen de Inflow.
 - En el Backend, se crean diferentes instancias de servicios de AWS como S3, Lambda, DynamoDB y API Gateway.
-- 
+
 ## Variable de entrorno 
 
 

@@ -1,26 +1,30 @@
 
-# Infraestructura en AWS 
-esta es una documentacion que explica a grandes rasgos como utilizar el cli para crear servicios de aws con el sdk de javaScript de aws  .
+# Infraestructura en AWS Esta es una documentación que explica, a grandes rasgos, cómo utilizar el CLI para crear servicios de AWS con el SDK de JavaScript de AWS.
+Los servicios que se crean son:
+
+- Para el Front-end, una instancia de EC2 que contiene un Docker ejecutando una imagen de Inflow.
+- En el Backend, se crean diferentes instancias de servicios de AWS como S3, Lambda, DynamoDB y API Gateway.
+- 
 ## Variable de entrorno 
 
 
-`URL` donde se obtendra el script para la ec2 , el cual instala docker 
+`URL`: URL donde se obtendrá el script para la EC2, que instalará Docker.
 
-`TYPEAMI` tipo de AMI de ec2
+`TYPEAMI`: Tipo de AMI para EC2.
 
-`TYPEINSTANCE` tipo de instacia para ec2
+`TYPEINSTANCE` : Tipo de instancia para EC2.
 
-`NAMEGROUP` nombre que se le dara el grupo de seguridad
+`NAMEGROUP` : Nombre que se le dará al grupo de seguridad.
 
-OPCIONAL `IP` donde se conectara a la instacia de ec2 con ssh 
+OPCIONAL `IP` : IP desde la cual se conectará a la instancia de EC2 con SSH.
 
-`KEY`   Nombre de llave a usar en la ec2
+`KEY` : Nombre de la llave a usar en la EC2.
 
-`ROLE` Rol para lambda
+`ROLE`: Rol para Lambda.
 
-`TYPEPROTOCOL` tipo de protocolo a usar en la APIGETWAY
+`TYPEPROTOCOL` : Tipo de protocolo a usar en la API Gateway.
 
-`ROUTEKEY` ruta por defecto en la APIGETWAY
+`ROUTEKEY`: Ruta por defecto en la API Gateway.
 
 ## Correr el proyecto 
 

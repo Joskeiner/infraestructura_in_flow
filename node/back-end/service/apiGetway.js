@@ -21,7 +21,7 @@ export async function CreateApi(arns) {
             Description: description,
             ProtocolType: process.env.TYPEPROTOCOL,
             RouteKey: process.env.ROUTEKEY,
-            Target: 'HTTP', 
+            Target: arns, 
         });
 
         const response = await client.send(commnad);

@@ -7,7 +7,7 @@ import { createLambda, UpdateCode } from "../../back-end/service/lambda.js";
  * esta funcion  manejara las rutas para cada servicio
  * @param {number} choiceNumber 
  */
-export async function Router( choiceNumber) {
+export async function Router() {
     let choiceNumber = await present();
   switch(choiceNumber) {
         case  1 :
@@ -62,7 +62,7 @@ async function present() {
         6 - subir el codigo  
         \n
         `);
-
+        prompt.close();
     let choiceNumber = parseInt(choice);
     return  choiceNumber ;
 }

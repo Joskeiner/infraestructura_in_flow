@@ -1,6 +1,7 @@
 import { createInterface} from 'node:readline/promises'
 import { startBack} from './back-end/startBack.js'
 import { startFront} from './front-end/startFront.js'
+import { Router } from './front-end/util/router.js';
 
 async function main() {
     const prompt = createInterface({
@@ -47,6 +48,7 @@ async function upService(choice){
             await startBack(); 
             process.exit(0);
         case 3 :
+            await Router();
             process.exit(0);           
         }
 

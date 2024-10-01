@@ -18,10 +18,10 @@ export async function CreateApi(arns) {
         const commnad = new CreateApiCommand({
 
             Name: name,
-            Description :description,
+            Description: description,
             ProtocolType: process.env.TYPEPROTOCOL,
             RouteKey: process.env.ROUTEKEY,
-            Target: arns, 
+            Target: 'HTTP', 
         });
 
         const response = await client.send(commnad);

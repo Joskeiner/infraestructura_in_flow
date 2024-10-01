@@ -2,6 +2,7 @@ import { createBucket  , DeleteBucket} from "../../back-end/service/s3.js";
 import { createInterface} from 'node:readline/promises';
 import {createTableDynamo , deleteTableDynamo} from "../../back-end/service/dynamoDb.js";
 import { createLambda, UpdateCode } from "../../back-end/service/lambda.js";
+import { CreateApi } from "../../back-end/service/apiGetway.js";
 // import {  } from "./service/lambda.js";
 /**
  * esta funcion  manejara las rutas para cada servicio
@@ -40,6 +41,9 @@ export async function Router() {
         case 6:
             await UpdateCode();
             process.exit(0);
+        case 7 :
+            let response = await createLambda();
+            await CreateApi(response);
         default:
             break;
     }
@@ -59,7 +63,8 @@ async function present() {
         3 - crear tabla
         4 - eliminar tabla 
         5 - crear lambda
-        6 - subir el codigo  
+        6 - subir el codigo 
+        7 - crear lambda y apiGetway 
         \n
         `);
         prompt.close();

@@ -19,8 +19,8 @@ sudo apt update
 sudo apt install -y docker-ce docker-ce-cli containerd.io \
 docker-buildx-plugin docker-compose-plugin 
 
-sudo docker pull joskeiner/app:0.1
+sudo docker pull joskeiner/inflow:0.1
 
-sudo docker run --name inflow -p 80:80 joskeiner/app:0.1 
+sudo docker run --name inflow -p 80:80 joskeiner/inflow:0.1
 
 
